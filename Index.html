@@ -1,0 +1,51 @@
+<!DOCTYPEDOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasir UMKM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2563eb">
+</head>
+<body>
+    <header>
+        <h1>Kasir Posku</h1>
+    </header>
+
+    <main>
+        <!-- Tambah Produk -->
+        <section class="card">
+            <h3>+ Tambah Produk</h3>
+            <input type="text" id="prodName" placeholder="Nama Produk">
+            <input type="number" id="prodPrice" placeholder="Harga (Rp)">
+            <button onclick="addProduct()">Simpan Produk</button>
+        </section>
+
+        <!-- Daftar Produk -->
+        <section class="card">
+            <h3>Daftar Produk</h3>
+            <div id="productList"></div>
+        </section>
+
+        <!-- Keranjang Belanja -->
+        <section class="card">
+            <h3>Keranjang</h3>
+            <ul id="cartList"></ul>
+            <hr>
+            <h4>Total: Rp <span id="totalPrice">0</span></h4>
+            <input type="number" id="cashInput" placeholder="Uang Tunai (Rp)" oninput="calcChange()">
+            <p>Kembalian: Rp <span id="changePrice">0</span></p>
+            <button class="btn-success" onclick="sendWhatsApp()">Kirim Struk via WA</button>
+            <button class="btn-danger" onclick="clearCart()">Kosongkan Keranjang</button>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+</body>
+</html>

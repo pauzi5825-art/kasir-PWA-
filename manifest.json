@@ -1,0 +1,15 @@
+{
+  "short_name": "KasirUMKM",
+  "name": "Aplikasi Kasir UMKM",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "./index.html",
+  "background_color": "#2563eb",
+  "theme_color": "#2563eb",
+  "display": "standalone"
+}
